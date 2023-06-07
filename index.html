@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="contain">
+            <input placeholder="Input your first value..." type="number" id="firstValue">
+            <input type="text" id="input">
+            <input placeholder="Input your seconvalue..." type="number" id="secondValue">
+        </div>
+        <button onclick="multiply()">Check</button>
+        <table align="center" id="myTable"></table>
+    </div>
+    <script>
+        function multiply() {
+            var valueOne = firstValue.value;
+            var valueTwo = secondValue.value;
+            var valueThree = input.value
+            for(i = 1; i <= Number(valueOne); i++){
+                if(valueThree === "*"){
+                    calc = `<tr style="border: 2px solid red">`
+                        for(j = 1; j <= Number(valueTwo); j++){
+                            calc += `<td style="padding: 5px;">${i} * ${j} = ${i+j}</td>`
+                        }
+                        calc += `</tr>`
+                        myTable.innerHTML += calc
+                }
+                else if(valueThree === "+"){
+                    calc = `<tr style="border: 2px solid red">`
+                        for(j = 1; j <= Number(valueTwo); j++){
+                            calc += `<td style="padding: 5px;">${i} + ${j} = ${i+j}</td>`
+                        }
+                        calc += `</tr>`
+                        myTable.innerHTML += calc
+                }
+                else if(valueThree === "-"){
+                    calc = `<tr style="border: 2px solid red">`
+                        for(j = 1; j <= Number(valueTwo); j++){
+                            calc += `<td style="padding: 5px;">${i} - ${j} = ${i-j}</td>`
+                        }
+                        calc += `</tr>`
+                        myTable.innerHTML += calc
+                }
+                else if(valueThree === "/"){
+                    calc = `<tr style="border: 2px solid red">`
+                        for(j = 1; j <= Number(valueTwo); j++){
+                            calc += `<td style="padding: 5px;">${i} / ${j} = ${i/j}</td>`
+                        }
+                        calc += `</tr>`
+                        myTable.innerHTML += calc
+                }
+                else{
+                    myTable.innerHTML = `Invalid Input`
+                }
+            }
+        }
+    </script>
+</body>
+</html>
